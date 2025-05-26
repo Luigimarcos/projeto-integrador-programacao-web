@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Produtos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+    .produto {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin: 10px;
+      width: 200px;
+      padding: 10px;
+      text-align: center;
+    }
+    .produto img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .produto h3 {
+      font-size: 18px;
+      margin: 10px 0 5px;
+    }
+    .produto p {
+      font-size: 14px;
+      color: #555;
+    }
+    .produto a {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #28a745;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .produto a:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Catálogo de Produtos</h1>
+  </header>
+  <main id="catalogo">
+    <!-- Os produtos serão inseridos aqui pelo JavaScript -->
+  </main>
+
+  <script>
+    const produtos = [
+      {
+        nome: "Colar Dourado",
+        descricao: "Colar elegante banhado a ouro.",
+        imagem: "https://via.placeholder.com/200x200?text=Colar",
+        whatsapp: "https://wa.me/5500000000000?text=Tenho%20interesse%20no%20colar"
+      },
+      {
+        nome: "Pulseira Prata",
+        descricao: "Pulseira em prata fina, modelo clássico.",
+        imagem: "https://via.placeholder.com/200x200?text=Pulseira",
+        whatsapp: "https://wa.me/5500000000000?text=Tenho%20interesse%20na%20pulseira"
+      },
+      {
+        nome: "Anel com Pedra",
+        descricao: "Anel com pedra natural lapidada.",
+        imagem: "https://via.placeholder.com/200x200?text=Anel",
+        whatsapp: "https://wa.me/5500000000000?text=Tenho%20interesse%20no%20anel"
+      }
+    ];
+
+    const catalogo = document.getElementById("catalogo");
+
+    produtos.forEach(produto => {
+      const div = document.createElement("div");
+      div.className = "produto";
+      div.innerHTML = `
+        <img src="${produto.imagem}" alt="${produto.nome}">
+        <h3>${produto.nome}</h3>
+        <p>${produto.descricao}</p>
+        <a href="${produto.whatsapp}" target="_blank">Falar no WhatsApp</a>
+      `;
+      catalogo.appendChild(div);
+    });
+  </script>
+</body>
+</html>
