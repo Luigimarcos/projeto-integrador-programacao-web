@@ -1,97 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catálogo de Produtos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lux Bijoux - Catálogo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
+      background: linear-gradient(to right, #fff8f0, #ffe6f0);
+      color: #333;
     }
     header {
-      background-color: #333;
+      background-color: #8e44ad;
       color: #fff;
-      padding: 20px;
+      padding: 40px 20px;
       text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
     main {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      padding: 40px 30px;
     }
     .produto {
       background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      margin: 10px;
-      width: 200px;
-      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 15px;
       text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .produto:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
     }
     .produto img {
       width: 100%;
-      height: auto;
-      border-radius: 8px;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 10px;
     }
     .produto h3 {
-      font-size: 18px;
-      margin: 10px 0 5px;
+      font-size: 20px;
+      margin: 12px 0 6px;
+      color: #8e44ad;
     }
     .produto p {
       font-size: 14px;
       color: #555;
+      margin: 0 0 10px;
     }
     .produto a {
       display: inline-block;
       margin-top: 10px;
-      background-color: #28a745;
+      background-color: #8e44ad;
       color: #fff;
-      padding: 8px 12px;
-      border-radius: 5px;
+      padding: 10px 16px;
+      border-radius: 30px;
       text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
     }
     .produto a:hover {
-      background-color: #218838;
+      background-color: #6c3483;
+    }
+    footer {
+      background: #f5f5f5;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Catálogo de Produtos</h1>
+    Lux Bijoux - Catálogo Exclusivo
   </header>
+
   <main id="catalogo">
-    <!-- Os produtos serão inseridos aqui pelo JavaScript -->
+    <!-- Produtos serão inseridos aqui -->
   </main>
+
+  <footer>
+    &copy; 2025 Lux Bijoux - Todos os direitos reservados. Desenvolvido para Projeto Integrador UNISA.
+  </footer>
 
   <script>
     const produtos = [
       {
-        nome: "Colar Dourado",
-        descricao: "Colar elegante banhado a ouro.",
-        imagem: "https://via.placeholder.com/200x200?text=Colar",
-        whatsapp: "https://wa.me/5500000000000?text=Tenho%20interesse%20no%20colar"
+        nome: "Colar Dourado Luxo",
+        descricao: "Colar banhado a ouro 18k com pingente de cristal importado.",
+        imagem: "https://images.unsplash.com/photo-1600180758890-7cabbaf21c2e?auto=format&fit=crop&w=400&q=80",
+        whatsapp: "https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20no%20colar%20dourado%20luxo."
       },
       {
-        nome: "Pulseira Prata",
-        descricao: "Pulseira em prata fina, modelo clássico.",
-        imagem: "https://via.placeholder.com/200x200?text=Pulseira",
-        whatsapp: "https://wa.me/5500000000000?text=Tenho%20interesse%20na%20pulseira"
+        nome: "Pulseira de Prata 925",
+        descricao: "Pulseira em prata com acabamento brilhante e fecho ajustável.",
+        imagem: "https://images.unsplash.com/photo-1615203061499-3b06d5ff7ce3?auto=format&fit=crop&w=400&q=80",
+        whatsapp: "https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20na%20pulseira%20de%20prata."
       },
       {
-        nome: "Anel com Pedra",
-        descricao: "Anel com pedra natural lapidada.",
-        imagem: "https://via.placeholder.com/200x200?text=Anel",
-        whatsapp: "https://wa.me/5500000000000?text=Tenho%20interesse%20no%20anel"
+        nome: "Anel Pedra Azul Royal",
+        descricao: "Anel com pedra lapidada azul royal, aro ajustável em prata.",
+        imagem: "https://images.unsplash.com/photo-1603349206294-2d39e6cc5b97?auto=format&fit=crop&w=400&q=80",
+        whatsapp: "https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20no%20anel%20pedra%20azul."
+      },
+      {
+        nome: "Brincos com Pérolas",
+        descricao: "Brincos com pérolas naturais e base banhada a ouro rosé.",
+        imagem: "https://images.unsplash.com/photo-1603570422385-b30b9d1b7010?auto=format&fit=crop&w=400&q=80",
+        whatsapp: "https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20nos%20brincos%20com%20pérolas."
       }
     ];
 
     const catalogo = document.getElementById("catalogo");
-
     produtos.forEach(produto => {
       const div = document.createElement("div");
       div.className = "produto";
@@ -99,7 +130,7 @@
         <img src="${produto.imagem}" alt="${produto.nome}">
         <h3>${produto.nome}</h3>
         <p>${produto.descricao}</p>
-        <a href="${produto.whatsapp}" target="_blank">Falar no WhatsApp</a>
+        <a href="${produto.whatsapp}" target="_blank">Comprar via WhatsApp</a>
       `;
       catalogo.appendChild(div);
     });
